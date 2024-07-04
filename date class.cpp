@@ -175,6 +175,31 @@ public:
 		int day2 = GetDay(d._year, d._month,d._day);
 		return day1 - day2;
 	}
+	date& operator--()//前置减减
+	{
+		*this -= 1;
+		return *this;
+	}
+
+	date operator--(int)//后置减减
+	{
+		date tmp(*this);
+		*this -= 1;
+		return tmp;
+	}
+
+	date& operator++()//前置++
+	{
+		*this += 1;
+		return *this;
+	}
+
+	date operator++(int)//后置++
+	{
+		date tmp(*this);
+		*this += 1;
+		return tmp;
+	}
 
 private:
 	int _year;
